@@ -1,0 +1,245 @@
+[2026-09-09T02:22:30.531+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-09-09T02:22:30.622+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: countries_ingestion.extract_to_minio manual__2026-09-09T02:19:21.476044+00:00 [queued]>
+[2026-09-09T02:22:30.665+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: countries_ingestion.extract_to_minio manual__2026-09-09T02:19:21.476044+00:00 [queued]>
+[2026-09-09T02:22:30.668+0000] {taskinstance.py:2867} INFO - Starting attempt 2 of 2
+[2026-09-09T02:22:30.760+0000] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): extract_to_minio> on 2026-09-09 02:19:21.476044+00:00
+[2026-09-09T02:22:30.795+0000] {standard_task_runner.py:72} INFO - Started process 343 to run task
+[2026-09-09T02:22:30.804+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'countries_ingestion', 'extract_to_minio', 'manual__2026-09-09T02:19:21.476044+00:00', '--job-id', '14', '--raw', '--subdir', 'DAGS_FOLDER/countries_dag.py', '--cfg-path', '/tmp/tmpfpalnv7n']
+[2026-09-09T02:22:30.824+0000] {standard_task_runner.py:105} INFO - Job 14: Subtask extract_to_minio
+[2026-09-09T02:22:31.034+0000] {task_command.py:467} INFO - Running <TaskInstance: countries_ingestion.extract_to_minio manual__2026-09-09T02:19:21.476044+00:00 [running]> on host 2f648e1dd20d
+[2026-09-09T02:22:32.466+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='countries_ingestion' AIRFLOW_CTX_TASK_ID='extract_to_minio' AIRFLOW_CTX_EXECUTION_DATE='2026-09-09T02:19:21.476044+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-09-09T02:19:21.476044+00:00'
+[2026-09-09T02:22:32.484+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2026-09-09T02:22:32.562+0000] {logging_mixin.py:190} INFO - Calling REST Countries API...
+[2026-09-09T02:22:33.303+0000] {logging_mixin.py:190} INFO - API extraction successful.
+[2026-09-09T02:22:33.307+0000] {logging_mixin.py:190} INFO - Connecting to MinIo...
+[2026-09-09T02:22:33.319+0000] {connectionpool.py:868} WARNING - Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f2e8b179690>: Failed to establish a new connection: [Errno 111] Connection refused')': /triplens?location=
+[2026-09-09T02:22:33.731+0000] {connectionpool.py:868} WARNING - Retrying (Retry(total=3, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f2e8af1aa10>: Failed to establish a new connection: [Errno 111] Connection refused')': /triplens?location=
+[2026-09-09T02:22:34.543+0000] {connectionpool.py:868} WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f2e8af1b710>: Failed to establish a new connection: [Errno 111] Connection refused')': /triplens?location=
+[2026-09-09T02:22:36.147+0000] {connectionpool.py:868} WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f2e8af245d0>: Failed to establish a new connection: [Errno 111] Connection refused')': /triplens?location=
+[2026-09-09T02:22:39.361+0000] {connectionpool.py:868} WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f2e8af25410>: Failed to establish a new connection: [Errno 111] Connection refused')': /triplens?location=
+[2026-09-09T02:22:39.406+0000] {taskinstance.py:3313} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/urllib3/connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/home/airflow/.local/lib/python3.11/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/urllib3/connectionpool.py", line 493, in _make_request
+    conn.request(
+  File "/home/airflow/.local/lib/python3.11/site-packages/urllib3/connection.py", line 445, in request
+    self.endheaders()
+  File "/usr/local/lib/python3.11/http/client.py", line 1298, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/local/lib/python3.11/http/client.py", line 1058, in _send_output
+    self.send(msg)
+  File "/usr/local/lib/python3.11/http/client.py", line 996, in send
+    self.connect()
+  File "/home/airflow/.local/lib/python3.11/site-packages/urllib3/connection.py", line 276, in connect
+    self.sock = self._new_conn()
+                ^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/urllib3/connection.py", line 213, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7f2e8af26250>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/taskinstance.py", line 768, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/taskinstance.py", line 734, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/baseoperator.py", line 424, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/countries_dag.py", line 38, in extract_and_upload
+    upload_to_minio(data)
+  File "/opt/airflow/src/data_extraction.py", line 60, in upload_to_minio
+    if not client.bucket_exists(MINIO_BUCKET):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/minio/api.py", line 700, in bucket_exists
+    self._execute("HEAD", bucket_name)
+  File "/home/airflow/.local/lib/python3.11/site-packages/minio/api.py", line 441, in _execute
+    region = self._get_region(bucket_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/minio/api.py", line 498, in _get_region
+    response = self._url_open(
+               ^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/minio/api.py", line 306, in _url_open
+    response = self._http.urlopen(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/urllib3/poolmanager.py", line 443, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/urllib3/connectionpool.py", line 871, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/urllib3/connectionpool.py", line 871, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/urllib3/connectionpool.py", line 871, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  [Previous line repeated 2 more times]
+  File "/home/airflow/.local/lib/python3.11/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=9000): Max retries exceeded with url: /triplens?location= (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f2e8af26250>: Failed to establish a new connection: [Errno 111] Connection refused'))
+[2026-09-09T02:22:39.721+0000] {taskinstance.py:1226} INFO - Marking task as FAILED. dag_id=countries_ingestion, task_id=extract_to_minio, run_id=manual__2026-09-09T02:19:21.476044+00:00, execution_date=20260909T021921, start_date=20260909T022230, end_date=20260909T022239
+[2026-09-09T02:22:39.935+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2026-09-09T02:22:39.938+0000] {standard_task_runner.py:124} ERROR - Failed to execute job 14 for task extract_to_minio (HTTPConnectionPool(host='localhost', port=9000): Max retries exceeded with url: /triplens?location= (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f2e8af26250>: Failed to establish a new connection: [Errno 111] Connection refused')); 343)
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/urllib3/connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/home/airflow/.local/lib/python3.11/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/urllib3/connectionpool.py", line 493, in _make_request
+    conn.request(
+  File "/home/airflow/.local/lib/python3.11/site-packages/urllib3/connection.py", line 445, in request
+    self.endheaders()
+  File "/usr/local/lib/python3.11/http/client.py", line 1298, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/local/lib/python3.11/http/client.py", line 1058, in _send_output
+    self.send(msg)
+  File "/usr/local/lib/python3.11/http/client.py", line 996, in send
+    self.connect()
+  File "/home/airflow/.local/lib/python3.11/site-packages/urllib3/connection.py", line 276, in connect
+    self.sock = self._new_conn()
+                ^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/urllib3/connection.py", line 213, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7f2e8af26250>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/task/task_runner/standard_task_runner.py", line 117, in _start_by_fork
+    ret = args.func(args, dag=self.dag)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/utils/cli.py", line 116, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/cli/commands/task_command.py", line 256, in _run_task_by_selected_method
+    return _run_raw_task(args, ti)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/cli/commands/task_command.py", line 341, in _run_raw_task
+    return ti._run_raw_task(
+           ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/taskinstance.py", line 3006, in _run_raw_task
+    return _run_raw_task(
+           ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/taskinstance.py", line 274, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/taskinstance.py", line 3161, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/taskinstance.py", line 3185, in _execute_task
+    return _execute_task(self, context, task_orig)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/taskinstance.py", line 768, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/taskinstance.py", line 734, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/baseoperator.py", line 424, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/countries_dag.py", line 38, in extract_and_upload
+    upload_to_minio(data)
+  File "/opt/airflow/src/data_extraction.py", line 60, in upload_to_minio
+    if not client.bucket_exists(MINIO_BUCKET):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/minio/api.py", line 700, in bucket_exists
+    self._execute("HEAD", bucket_name)
+  File "/home/airflow/.local/lib/python3.11/site-packages/minio/api.py", line 441, in _execute
+    region = self._get_region(bucket_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/minio/api.py", line 498, in _get_region
+    response = self._url_open(
+               ^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/minio/api.py", line 306, in _url_open
+    response = self._http.urlopen(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/urllib3/poolmanager.py", line 443, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/urllib3/connectionpool.py", line 871, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/urllib3/connectionpool.py", line 871, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/urllib3/connectionpool.py", line 871, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  [Previous line repeated 2 more times]
+  File "/home/airflow/.local/lib/python3.11/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=9000): Max retries exceeded with url: /triplens?location= (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f2e8af26250>: Failed to establish a new connection: [Errno 111] Connection refused'))
+[2026-09-09T02:22:40.178+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 1
+[2026-09-09T02:22:40.857+0000] {standard_task_runner.py:217} INFO - Process not found (most likely exited), stop collecting metrics
+[2026-09-09T02:22:40.890+0000] {taskinstance.py:3901} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-09-09T02:22:40.909+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

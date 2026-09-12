@@ -1,0 +1,116 @@
+services:
+
+  minio:
+    image: minio/minio:latest
+    container_name: triplens-minio
+
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+
+    env_file:
+      - ../.env
+
+    volumes:
+      - minio_data:/data
+
+    command: server /data --console-address ":9001"
+
+
+  python:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+
+    container_name: triplens-python
+
+    volumes:
+      - ../src:/app
+
+    working_dir: /app
+
+    env_file:
+      - ../.env
+
+    depends_on:
+      - minio
+
+ 
+  dbt:
+      image: ghcr.io/dbt-labs/dbt-snowflake:latest
+      container_name: triplens-dbt
+      volumes:
+        - ../dbt:/usr/app
+        - ../dbt/profiles:/root/.dbt
+      working_dir: /usr/app/triplens_dbt
+      env_file:
+        - ../.env
+      entrypoint: ["/bin/sh", "-c"]
+      command: ["tail -f /dev/null"]
+     
+  
+
+
+  postgres:
+    image: postgres:13
+    container_name: triplens-postgres
+    environment:
+      - POSTGRES_USER=airflow
+      - POSTGRES_PASSWORD=airflow
+      - POSTGRES_DB=airflow
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-db-volume:/var/lib/postgresql/data
+
+  airflow:
+    image: apache/airflow:2.10.5-python3.11
+    container_name: triplens-airflow
+    restart: always
+    depends_on:
+      - postgres
+
+    env_file:
+    - ../.env
+    
+    environment:
+      - AIRFLOW__CORE__EXECUTOR=LocalExecutor
+      - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflow@postgres/airflow
+      - AIRFLOW__CORE__FERNET_KEY=46ExB25ebA0D_1234567890abcdef1234567890=
+      - AIRFLOW__CORE__LOAD_EXAMPLES=false
+      - PYTHONPATH=/opt/airflow
+      - _PIP_ADDITIONAL_REQUIREMENTS=minio snowflake-connector-python docker apache-airflow-providers-docker
+    
+      
+    volumes:
+      - ../airflow/dags:/opt/airflow/dags
+      - ../airflow/logs:/opt/airflow/logs
+      - ../airflow/plugins:/opt/airflow/plugins
+      - ../ingestion:/opt/airflow/ingestion
+      - ../src:/opt/airflow/src
+      - ../dbt:/opt/airflow/dbt
+      - ../.env:/opt/airflow/.env
+      - /var/run/docker.sock:/var/run/docker.sock
+      
+    ports:
+      - "8084:8080"
+    command: >
+      bash -c "airflow db migrate &&
+               airflow users create --username admin --firstname Admin --lastname User --role Admin --email admin@example.com --password adminpassword &&
+               airflow scheduler & exec airflow webserver --port 8080"
+
+
+
+
+
+
+
+volumes:
+  minio_data:
+  postgres-db-volume:
+
+
+  
+
+
+

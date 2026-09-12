@@ -1,0 +1,31 @@
+[2026-09-12T00:45:39.441+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-09-12T00:45:39.655+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: countries_ingestion.load_to_snowflake scheduled__2026-09-11T20:00:00+00:00 [queued]>
+[2026-09-12T00:45:40.610+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: countries_ingestion.load_to_snowflake scheduled__2026-09-11T20:00:00+00:00 [queued]>
+[2026-09-12T00:45:40.867+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 2
+[2026-09-12T00:45:41.036+0000] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): load_to_snowflake> on 2026-09-11 20:00:00+00:00
+[2026-09-12T00:45:41.103+0000] {standard_task_runner.py:72} INFO - Started process 818 to run task
+[2026-09-12T00:45:41.112+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'countries_ingestion', 'load_to_snowflake', 'scheduled__2026-09-11T20:00:00+00:00', '--job-id', '53', '--raw', '--subdir', 'DAGS_FOLDER/countries_dag.py', '--cfg-path', '/tmp/tmpvicifagk']
+[2026-09-12T00:45:41.197+0000] {standard_task_runner.py:105} INFO - Job 53: Subtask load_to_snowflake
+[2026-09-12T00:45:41.471+0000] {task_command.py:467} INFO - Running <TaskInstance: countries_ingestion.load_to_snowflake scheduled__2026-09-11T20:00:00+00:00 [running]> on host 0cf0b7966e75
+[2026-09-12T00:45:42.309+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='countries_ingestion' AIRFLOW_CTX_TASK_ID='load_to_snowflake' AIRFLOW_CTX_EXECUTION_DATE='2026-09-11T20:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-09-11T20:00:00+00:00'
+[2026-09-12T00:45:42.379+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2026-09-12T00:45:42.452+0000] {minio_to_snowflake.py:79} INFO - Connecting to MinIO...
+[2026-09-12T00:45:42.469+0000] {minio_to_snowflake.py:87} INFO - Connecting to Snowflake...
+[2026-09-12T00:45:42.541+0000] {connection.py:424} INFO - Snowflake Connector for Python Version: 3.13.2, Python Version: 3.11.11, Platform: Linux-5.15.167.4-microsoft-standard-WSL2-x86_64-with-glibc2.36
+[2026-09-12T00:45:42.630+0000] {connection.py:1213} INFO - Connecting to GLOBAL Snowflake domain
+[2026-09-12T00:45:42.663+0000] {connection.py:1295} INFO - This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+[2026-09-12T00:45:46.913+0000] {minio_to_snowflake.py:102} INFO - Current watermark: 2026-09-11 20:01:06.430000+00:00
+[2026-09-12T00:45:47.081+0000] {minio_to_snowflake.py:118} INFO - Found 1 new file(s) to load.
+[2026-09-12T00:45:47.103+0000] {minio_to_snowflake.py:124} INFO - Downloading bronze/countries/countries_20260912T004527Z.json...
+[2026-09-12T00:45:47.199+0000] {minio_to_snowflake.py:128} INFO - Uploading countries_20260912T004527Z.json to Snowflake stage...
+[2026-09-12T00:45:48.639+0000] {minio_to_snowflake.py:135} INFO - Loading countries_20260912T004527Z.json into COUNTRIES_RAW...
+[2026-09-12T00:45:50.781+0000] {minio_to_snowflake.py:151} INFO - Loaded: bronze/countries/countries_20260912T004527Z.json
+[2026-09-12T00:45:50.785+0000] {connection.py:803} INFO - closed
+[2026-09-12T00:45:50.873+0000] {connection.py:809} INFO - No async queries seem to be running, deleting session
+[2026-09-12T00:45:50.985+0000] {minio_to_snowflake.py:157} INFO - SUCCESS: all new files loaded.
+[2026-09-12T00:45:51.020+0000] {python.py:240} INFO - Done. Returned value was: None
+[2026-09-12T00:45:51.136+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2026-09-12T00:45:51.146+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=countries_ingestion, task_id=load_to_snowflake, run_id=scheduled__2026-09-11T20:00:00+00:00, execution_date=20260911T200000, start_date=20260912T004539, end_date=20260912T004551
+[2026-09-12T00:45:51.379+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2026-09-12T00:45:51.502+0000] {taskinstance.py:3901} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-09-12T00:45:51.513+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

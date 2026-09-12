@@ -1,0 +1,94 @@
+[2026-09-12T00:44:52.795+0000] {processor.py:186} INFO - Started process (PID=792) to work on /opt/airflow/dags/countries_dag.py
+[2026-09-12T00:44:52.938+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/countries_dag.py for tasks to queue
+[2026-09-12T00:44:52.999+0000] {logging_mixin.py:190} INFO - [2026-09-12T00:44:52.997+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/countries_dag.py
+[2026-09-12T00:45:03.425+0000] {processor.py:925} INFO - DAG(s) 'countries_ingestion' retrieved from /opt/airflow/dags/countries_dag.py
+[2026-09-12T00:45:05.619+0000] {logging_mixin.py:190} INFO - [2026-09-12T00:45:05.618+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-09-12T00:45:07.075+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/countries_dag.py took 14.328 seconds
+[2026-09-12T00:45:11.922+0000] {processor.py:186} INFO - Started process (PID=799) to work on /opt/airflow/dags/countries_dag.py
+[2026-09-12T00:45:11.925+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/countries_dag.py for tasks to queue
+[2026-09-12T00:45:11.934+0000] {logging_mixin.py:190} INFO - [2026-09-12T00:45:11.933+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/countries_dag.py
+[2026-09-12T00:45:24.038+0000] {processor.py:925} INFO - DAG(s) 'countries_ingestion' retrieved from /opt/airflow/dags/countries_dag.py
+[2026-09-12T00:45:24.112+0000] {logging_mixin.py:190} INFO - [2026-09-12T00:45:24.108+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-09-12T00:45:25.054+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/countries_dag.py took 13.176 seconds
+[2026-09-12T00:45:30.734+0000] {processor.py:186} INFO - Started process (PID=808) to work on /opt/airflow/dags/countries_dag.py
+[2026-09-12T00:45:30.770+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/countries_dag.py for tasks to queue
+[2026-09-12T00:45:30.796+0000] {logging_mixin.py:190} INFO - [2026-09-12T00:45:30.795+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/countries_dag.py
+[2026-09-12T00:45:36.272+0000] {processor.py:925} INFO - DAG(s) 'countries_ingestion' retrieved from /opt/airflow/dags/countries_dag.py
+[2026-09-12T00:45:37.305+0000] {logging_mixin.py:190} INFO - [2026-09-12T00:45:37.294+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-09-12T00:45:37.574+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/countries_dag.py took 6.879 seconds
+[2026-09-12T00:46:08.835+0000] {processor.py:186} INFO - Started process (PID=827) to work on /opt/airflow/dags/countries_dag.py
+[2026-09-12T00:46:08.847+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/countries_dag.py for tasks to queue
+[2026-09-12T00:46:08.853+0000] {logging_mixin.py:190} INFO - [2026-09-12T00:46:08.850+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/countries_dag.py
+[2026-09-12T00:46:15.114+0000] {processor.py:925} INFO - DAG(s) 'countries_ingestion' retrieved from /opt/airflow/dags/countries_dag.py
+[2026-09-12T00:46:15.212+0000] {logging_mixin.py:190} INFO - [2026-09-12T00:46:15.211+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-09-12T00:46:15.405+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/countries_dag.py took 6.604 seconds
+[2026-09-12T00:46:47.179+0000] {processor.py:186} INFO - Started process (PID=834) to work on /opt/airflow/dags/countries_dag.py
+[2026-09-12T00:46:47.244+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/countries_dag.py for tasks to queue
+[2026-09-12T00:46:47.264+0000] {logging_mixin.py:190} INFO - [2026-09-12T00:46:47.250+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/countries_dag.py
+[2026-09-12T00:46:55.043+0000] {processor.py:925} INFO - DAG(s) 'countries_ingestion' retrieved from /opt/airflow/dags/countries_dag.py
+[2026-09-12T00:46:55.326+0000] {logging_mixin.py:190} INFO - [2026-09-12T00:46:55.314+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-09-12T00:46:55.524+0000] {logging_mixin.py:190} INFO - [2026-09-12T00:46:55.523+0000] {dag.py:4180} INFO - Setting next_dagrun for countries_ingestion to 2026-09-12 00:00:00+00:00, run_after=2026-09-12 04:00:00+00:00
+[2026-09-12T00:46:55.876+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/countries_dag.py took 8.732 seconds
+[2026-09-12T00:47:28.271+0000] {processor.py:186} INFO - Started process (PID=841) to work on /opt/airflow/dags/countries_dag.py
+[2026-09-12T00:47:28.289+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/countries_dag.py for tasks to queue
+[2026-09-12T00:47:28.335+0000] {logging_mixin.py:190} INFO - [2026-09-12T00:47:28.333+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/countries_dag.py
+[2026-09-12T00:47:36.999+0000] {processor.py:925} INFO - DAG(s) 'countries_ingestion' retrieved from /opt/airflow/dags/countries_dag.py
+[2026-09-12T00:47:37.080+0000] {logging_mixin.py:190} INFO - [2026-09-12T00:47:37.079+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-09-12T00:47:37.210+0000] {logging_mixin.py:190} INFO - [2026-09-12T00:47:37.209+0000] {dag.py:4180} INFO - Setting next_dagrun for countries_ingestion to 2026-09-12 00:00:00+00:00, run_after=2026-09-12 04:00:00+00:00
+[2026-09-12T00:47:37.286+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/countries_dag.py took 9.232 seconds
+[2026-09-12T00:48:07.991+0000] {processor.py:186} INFO - Started process (PID=848) to work on /opt/airflow/dags/countries_dag.py
+[2026-09-12T00:48:08.003+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/countries_dag.py for tasks to queue
+[2026-09-12T00:48:08.008+0000] {logging_mixin.py:190} INFO - [2026-09-12T00:48:08.007+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/countries_dag.py
+[2026-09-12T00:48:13.930+0000] {processor.py:925} INFO - DAG(s) 'countries_ingestion' retrieved from /opt/airflow/dags/countries_dag.py
+[2026-09-12T00:48:14.198+0000] {logging_mixin.py:190} INFO - [2026-09-12T00:48:14.188+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-09-12T00:48:14.385+0000] {logging_mixin.py:190} INFO - [2026-09-12T00:48:14.384+0000] {dag.py:4180} INFO - Setting next_dagrun for countries_ingestion to 2026-09-12 00:00:00+00:00, run_after=2026-09-12 04:00:00+00:00
+[2026-09-12T00:48:14.575+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/countries_dag.py took 6.614 seconds
+[2026-09-12T00:48:46.132+0000] {processor.py:186} INFO - Started process (PID=855) to work on /opt/airflow/dags/countries_dag.py
+[2026-09-12T00:48:46.135+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/countries_dag.py for tasks to queue
+[2026-09-12T00:48:46.147+0000] {logging_mixin.py:190} INFO - [2026-09-12T00:48:46.146+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/countries_dag.py
+[2026-09-12T00:48:49.917+0000] {processor.py:925} INFO - DAG(s) 'countries_ingestion' retrieved from /opt/airflow/dags/countries_dag.py
+[2026-09-12T00:48:50.577+0000] {logging_mixin.py:190} INFO - [2026-09-12T00:48:50.576+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-09-12T00:48:50.720+0000] {logging_mixin.py:190} INFO - [2026-09-12T00:48:50.720+0000] {dag.py:4180} INFO - Setting next_dagrun for countries_ingestion to 2026-09-12 00:00:00+00:00, run_after=2026-09-12 04:00:00+00:00
+[2026-09-12T00:48:50.822+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/countries_dag.py took 4.710 seconds
+[2026-09-12T00:49:21.684+0000] {processor.py:186} INFO - Started process (PID=862) to work on /opt/airflow/dags/countries_dag.py
+[2026-09-12T00:49:21.690+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/countries_dag.py for tasks to queue
+[2026-09-12T00:49:21.702+0000] {logging_mixin.py:190} INFO - [2026-09-12T00:49:21.700+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/countries_dag.py
+[2026-09-12T00:49:26.971+0000] {processor.py:925} INFO - DAG(s) 'countries_ingestion' retrieved from /opt/airflow/dags/countries_dag.py
+[2026-09-12T00:49:27.123+0000] {logging_mixin.py:190} INFO - [2026-09-12T00:49:27.112+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-09-12T00:49:27.264+0000] {logging_mixin.py:190} INFO - [2026-09-12T00:49:27.263+0000] {dag.py:4180} INFO - Setting next_dagrun for countries_ingestion to 2026-09-12 00:00:00+00:00, run_after=2026-09-12 04:00:00+00:00
+[2026-09-12T00:49:27.358+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/countries_dag.py took 5.702 seconds
+[2026-09-12T00:49:58.700+0000] {processor.py:186} INFO - Started process (PID=869) to work on /opt/airflow/dags/countries_dag.py
+[2026-09-12T00:49:58.703+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/countries_dag.py for tasks to queue
+[2026-09-12T00:49:58.715+0000] {logging_mixin.py:190} INFO - [2026-09-12T00:49:58.708+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/countries_dag.py
+[2026-09-12T00:50:05.543+0000] {processor.py:925} INFO - DAG(s) 'countries_ingestion' retrieved from /opt/airflow/dags/countries_dag.py
+[2026-09-12T00:50:05.681+0000] {logging_mixin.py:190} INFO - [2026-09-12T00:50:05.680+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-09-12T00:50:05.842+0000] {logging_mixin.py:190} INFO - [2026-09-12T00:50:05.841+0000] {dag.py:4180} INFO - Setting next_dagrun for countries_ingestion to 2026-09-12 00:00:00+00:00, run_after=2026-09-12 04:00:00+00:00
+[2026-09-12T00:50:05.947+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/countries_dag.py took 7.318 seconds
+[2026-09-12T00:50:36.411+0000] {processor.py:186} INFO - Started process (PID=876) to work on /opt/airflow/dags/countries_dag.py
+[2026-09-12T00:50:36.414+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/countries_dag.py for tasks to queue
+[2026-09-12T00:50:36.418+0000] {logging_mixin.py:190} INFO - [2026-09-12T00:50:36.417+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/countries_dag.py
+[2026-09-12T00:50:43.405+0000] {processor.py:925} INFO - DAG(s) 'countries_ingestion' retrieved from /opt/airflow/dags/countries_dag.py
+[2026-09-12T00:50:43.525+0000] {logging_mixin.py:190} INFO - [2026-09-12T00:50:43.514+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-09-12T00:50:43.730+0000] {logging_mixin.py:190} INFO - [2026-09-12T00:50:43.729+0000] {dag.py:4180} INFO - Setting next_dagrun for countries_ingestion to 2026-09-12 00:00:00+00:00, run_after=2026-09-12 04:00:00+00:00
+[2026-09-12T00:50:43.824+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/countries_dag.py took 7.487 seconds
+[2026-09-12T00:51:14.466+0000] {processor.py:186} INFO - Started process (PID=883) to work on /opt/airflow/dags/countries_dag.py
+[2026-09-12T00:51:14.478+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/countries_dag.py for tasks to queue
+[2026-09-12T00:51:14.490+0000] {logging_mixin.py:190} INFO - [2026-09-12T00:51:14.489+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/countries_dag.py
+[2026-09-12T00:51:18.296+0000] {processor.py:925} INFO - DAG(s) 'countries_ingestion' retrieved from /opt/airflow/dags/countries_dag.py
+[2026-09-12T00:51:18.354+0000] {logging_mixin.py:190} INFO - [2026-09-12T00:51:18.353+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-09-12T00:51:18.426+0000] {logging_mixin.py:190} INFO - [2026-09-12T00:51:18.426+0000] {dag.py:4180} INFO - Setting next_dagrun for countries_ingestion to 2026-09-12 00:00:00+00:00, run_after=2026-09-12 04:00:00+00:00
+[2026-09-12T00:51:18.464+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/countries_dag.py took 4.030 seconds
+[2026-09-12T00:51:48.994+0000] {processor.py:186} INFO - Started process (PID=890) to work on /opt/airflow/dags/countries_dag.py
+[2026-09-12T00:51:49.001+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/countries_dag.py for tasks to queue
+[2026-09-12T00:51:49.005+0000] {logging_mixin.py:190} INFO - [2026-09-12T00:51:49.004+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/countries_dag.py
+[2026-09-12T00:51:53.195+0000] {processor.py:925} INFO - DAG(s) 'countries_ingestion' retrieved from /opt/airflow/dags/countries_dag.py
+[2026-09-12T00:51:53.813+0000] {logging_mixin.py:190} INFO - [2026-09-12T00:51:53.812+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-09-12T00:51:53.915+0000] {logging_mixin.py:190} INFO - [2026-09-12T00:51:53.915+0000] {dag.py:4180} INFO - Setting next_dagrun for countries_ingestion to 2026-09-12 00:00:00+00:00, run_after=2026-09-12 04:00:00+00:00
+[2026-09-12T00:51:53.990+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/countries_dag.py took 5.017 seconds
+[2026-09-12T00:52:24.853+0000] {processor.py:186} INFO - Started process (PID=897) to work on /opt/airflow/dags/countries_dag.py
+[2026-09-12T00:52:24.856+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/countries_dag.py for tasks to queue
+[2026-09-12T00:52:24.859+0000] {logging_mixin.py:190} INFO - [2026-09-12T00:52:24.858+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/countries_dag.py
+[2026-09-12T00:52:28.147+0000] {processor.py:925} INFO - DAG(s) 'countries_ingestion' retrieved from /opt/airflow/dags/countries_dag.py
+[2026-09-12T00:52:28.219+0000] {logging_mixin.py:190} INFO - [2026-09-12T00:52:28.218+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-09-12T00:52:28.282+0000] {logging_mixin.py:190} INFO - [2026-09-12T00:52:28.281+0000] {dag.py:4180} INFO - Setting next_dagrun for countries_ingestion to 2026-09-12 00:00:00+00:00, run_after=2026-09-12 04:00:00+00:00
+[2026-09-12T00:52:28.321+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/countries_dag.py took 3.486 seconds

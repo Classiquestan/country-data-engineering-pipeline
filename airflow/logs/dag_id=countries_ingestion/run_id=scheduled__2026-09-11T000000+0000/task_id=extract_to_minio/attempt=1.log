@@ -1,0 +1,20 @@
+[2026-09-11T19:26:56.640+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-09-11T19:26:56.715+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: countries_ingestion.extract_to_minio scheduled__2026-09-11T00:00:00+00:00 [queued]>
+[2026-09-11T19:26:56.796+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: countries_ingestion.extract_to_minio scheduled__2026-09-11T00:00:00+00:00 [queued]>
+[2026-09-11T19:26:56.824+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 2
+[2026-09-11T19:26:56.944+0000] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): extract_to_minio> on 2026-09-11 00:00:00+00:00
+[2026-09-11T19:26:57.035+0000] {standard_task_runner.py:72} INFO - Started process 219 to run task
+[2026-09-11T19:26:57.067+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'countries_ingestion', 'extract_to_minio', 'scheduled__2026-09-11T00:00:00+00:00', '--job-id', '40', '--raw', '--subdir', 'DAGS_FOLDER/countries_dag.py', '--cfg-path', '/tmp/tmprkcqos4w']
+[2026-09-11T19:26:57.107+0000] {standard_task_runner.py:105} INFO - Job 40: Subtask extract_to_minio
+[2026-09-11T19:26:57.446+0000] {task_command.py:467} INFO - Running <TaskInstance: countries_ingestion.extract_to_minio scheduled__2026-09-11T00:00:00+00:00 [running]> on host 0cf0b7966e75
+[2026-09-11T19:26:57.899+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='countries_ingestion' AIRFLOW_CTX_TASK_ID='extract_to_minio' AIRFLOW_CTX_EXECUTION_DATE='2026-09-11T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-09-11T00:00:00+00:00'
+[2026-09-11T19:26:57.909+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2026-09-11T19:26:58.120+0000] {logging_mixin.py:190} INFO - Calling REST Countries API...
+[2026-09-11T19:26:58.652+0000] {logging_mixin.py:190} INFO - API extraction successful.
+[2026-09-11T19:26:58.656+0000] {logging_mixin.py:190} INFO - Connecting to MinIo...
+[2026-09-11T19:26:59.004+0000] {logging_mixin.py:190} INFO - Uploaded JSON to MinIo: triplens/bronze/countries/countries_20260911T192658Z.json
+[2026-09-11T19:26:59.008+0000] {python.py:240} INFO - Done. Returned value was: None
+[2026-09-11T19:26:59.032+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2026-09-11T19:26:59.034+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=countries_ingestion, task_id=extract_to_minio, run_id=scheduled__2026-09-11T00:00:00+00:00, execution_date=20260911T000000, start_date=20260911T192656, end_date=20260911T192659
+[2026-09-11T19:26:59.177+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2026-09-11T19:26:59.203+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

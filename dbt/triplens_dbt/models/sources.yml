@@ -1,0 +1,38 @@
+version: 2
+
+sources:
+  - name: staging
+    database: TRIPLENS
+    schema: STAGING
+
+    tables:
+      - name: COUNTRIES_RAW
+
+version: 2
+
+models:
+  - name: stg_countries
+    columns:
+      - name: country_id
+        tests:
+          - not_null
+          - unique
+
+      - name: country_name
+        tests:
+          - not_null
+
+      - name: iso_alpha_3
+        tests:
+          - unique
+
+  - name: dim_countries
+    columns:
+      - name: country_id
+        tests:
+          - not_null
+          - unique
+
+      - name: country_name
+        tests:
+          - not_null

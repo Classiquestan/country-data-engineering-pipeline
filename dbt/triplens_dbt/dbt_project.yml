@@ -1,0 +1,10 @@
+name: triplens_dbt
+version: "1.0.0"
+
+profile: triplens_dbt
+
+model-paths: ["models"]
+
+models:
+  triplens_dbt:
+    +materialized: table
